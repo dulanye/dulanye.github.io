@@ -12,6 +12,10 @@
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             background: #000;
@@ -25,7 +29,13 @@
                 sans-serif;
         }
 
-        .cover {
+
+        /* =========================
+           电脑端
+           ========================= */
+
+        .desktop-cover {
+
             width: 100%;
             max-width: 1400px;
 
@@ -34,22 +44,27 @@
             position: relative;
         }
 
-        .cover img {
+
+        .desktop-cover img {
+
             width: 100%;
+
             display: block;
         }
 
-        .title {
+
+        .desktop-title {
+
             position: absolute;
 
             top: 18%;
             left: 50%;
 
-            transform: translate(-50%, -50%);
-
-            color: white;
+            transform:
+                translate(-50%, -50%);
 
             font-size: 42px;
+
             font-weight: 400;
 
             letter-spacing: 10px;
@@ -59,15 +74,19 @@
             z-index: 10;
         }
 
-        .tag {
+
+        .desktop-tag {
+
             position: absolute;
 
             bottom: 12%;
             left: 50%;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
             font-size: 14px;
+
             letter-spacing: 4px;
 
             white-space: nowrap;
@@ -75,7 +94,9 @@
             z-index: 10;
         }
 
-        .tag a {
+
+        .desktop-tag a {
+
             color: white;
 
             text-decoration: none;
@@ -84,32 +105,264 @@
 
             padding: 10px 15px;
 
-            cursor: pointer;
         }
 
-        .tag a:hover {
+
+        .desktop-tag a:hover {
+
             opacity: 0.6;
+
+        }
+
+
+        /* 手机端默认隐藏 */
+
+        .mobile-home {
+
+            display: none;
+
+        }
+
+
+        /* =========================
+           手机端
+           ========================= */
+
+        @media (max-width: 600px) {
+
+
+            /* 隐藏电脑版本 */
+
+            .desktop-cover {
+
+                display: none;
+
+            }
+
+
+            /* 显示手机版本 */
+
+            .mobile-home {
+
+                display: block;
+
+            }
+
+
+            /* -------------------------
+               顶部黑色标题区域
+               ------------------------- */
+
+            .mobile-title {
+
+                height: 180px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+            }
+
+
+            .mobile-title h1 {
+
+                margin: 0;
+
+                font-size: 28px;
+
+                font-weight: 400;
+
+                letter-spacing: 6px;
+
+            }
+
+
+            /* -------------------------
+               照片
+               ------------------------- */
+
+            .mobile-photo {
+
+                width: 100%;
+
+                background: #000;
+
+            }
+
+
+            .mobile-photo img {
+
+                width: 100%;
+
+                height: auto;
+
+                display: block;
+
+            }
+
+
+            /* -------------------------
+               照片下面的黑色区域
+               ------------------------- */
+
+            .mobile-menu {
+
+                min-height: 220px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+            }
+
+
+            .mobile-menu a {
+
+                color: white;
+
+                text-decoration: none;
+
+                font-size: 15px;
+
+                letter-spacing: 5px;
+
+                padding: 20px 30px;
+
+            }
+
+
+            .mobile-menu a:hover {
+
+                opacity: 0.6;
+
+            }
+
+
+            /* -------------------------
+               以后可以继续增加内容
+               ------------------------- */
+
+            .mobile-bottom {
+
+                min-height: 300px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                color: #555;
+
+                font-size: 12px;
+
+                letter-spacing: 3px;
+
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
-    <div class="cover">
 
-        <img src="sea.jpg" alt="海边">
+    <!-- =================================================
+         电脑端首页
+         ================================================= -->
 
-        <div class="title">
+    <div class="desktop-cover">
+
+
+        <img src="sea.jpg" alt="海边胶片照片">
+
+
+        <div class="desktop-title">
+
             蓝夜渡舟
+
         </div>
 
-        <div class="tag">
-            <a href="travel.html">荒原漫游</a>
+
+        <div class="desktop-tag">
+
+            <a href="travel.html">
+
+                荒原漫游
+
+            </a>
+
         </div>
+
 
     </div>
+
+
+
+    <!-- =================================================
+         手机端首页
+         ================================================= -->
+
+    <div class="mobile-home">
+
+
+        <!-- 顶部 -->
+
+        <section class="mobile-title">
+
+            <h1>
+
+                蓝夜渡舟
+
+            </h1>
+
+        </section>
+
+
+
+        <!-- 完整照片 -->
+
+        <section class="mobile-photo">
+
+            <img src="sea.jpg"
+                 alt="海边胶片照片">
+
+        </section>
+
+
+
+        <!-- 荒原漫游 -->
+
+        <section class="mobile-menu">
+
+            <a href="travel.html">
+
+                荒原漫游
+
+            </a>
+
+        </section>
+
+
+
+        <!-- 底部预留空间 -->
+
+        <section class="mobile-bottom">
+
+            ·
+
+        </section>
+
+
+    </div>
+
 
 </body>
 
