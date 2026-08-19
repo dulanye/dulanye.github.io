@@ -16,8 +16,11 @@
             box-sizing: border-box;
         }
 
+        html,
         body {
             margin: 0;
+            padding: 0;
+
             background: #000;
             color: white;
 
@@ -30,38 +33,50 @@
         }
 
 
-        /* =========================
-           电脑端
-           ========================= */
+        /* =================================================
+           电脑端首页
+           ================================================= */
 
-        .desktop-cover {
+        .desktop-home {
 
             width: 100%;
+
             max-width: 1400px;
 
             margin: 0 auto;
 
             position: relative;
+
         }
 
 
-        .desktop-cover img {
+        /* 海边照片 */
+
+        .desktop-home img {
 
             width: 100%;
 
+            height: auto;
+
             display: block;
+
         }
 
+
+        /* 蓝夜渡舟 */
 
         .desktop-title {
 
             position: absolute;
 
             top: 18%;
+
             left: 50%;
 
             transform:
                 translate(-50%, -50%);
+
+            color: white;
 
             font-size: 42px;
 
@@ -72,18 +87,30 @@
             white-space: nowrap;
 
             z-index: 10;
+
         }
 
 
-        .desktop-tag {
+        /* 两个栏目 */
+
+        .desktop-menu {
 
             position: absolute;
 
             bottom: 12%;
+
             left: 50%;
 
             transform:
                 translateX(-50%);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 45px;
 
             font-size: 14px;
 
@@ -92,10 +119,11 @@
             white-space: nowrap;
 
             z-index: 10;
+
         }
 
 
-        .desktop-tag a {
+        .desktop-menu a {
 
             color: white;
 
@@ -105,17 +133,22 @@
 
             padding: 10px 15px;
 
-        }
-
-
-        .desktop-tag a:hover {
-
-            opacity: 0.6;
+            transition: opacity 0.3s ease;
 
         }
 
 
-        /* 手机端默认隐藏 */
+        .desktop-menu a:hover {
+
+            opacity: 0.55;
+
+        }
+
+
+        /* =================================================
+           手机端
+           默认隐藏
+           ================================================= */
 
         .mobile-home {
 
@@ -124,34 +157,36 @@
         }
 
 
-        /* =========================
-           手机端
-           ========================= */
+        /* =================================================
+           手机端首页
+           ================================================= */
 
         @media (max-width: 600px) {
 
 
-            /* 隐藏电脑版本 */
+            /* 隐藏电脑端 */
 
-            .desktop-cover {
+            .desktop-home {
 
                 display: none;
 
             }
 
 
-            /* 显示手机版本 */
+            /* 显示手机端 */
 
             .mobile-home {
 
                 display: block;
 
+                width: 100%;
+
             }
 
 
-            /* -------------------------
-               顶部黑色标题区域
-               ------------------------- */
+            /* ---------------------------------------------
+               顶部黑色区域
+               --------------------------------------------- */
 
             .mobile-title {
 
@@ -163,12 +198,16 @@
 
                 justify-content: center;
 
+                background: #000;
+
             }
 
 
             .mobile-title h1 {
 
                 margin: 0;
+
+                color: white;
 
                 font-size: 28px;
 
@@ -179,9 +218,9 @@
             }
 
 
-            /* -------------------------
-               照片
-               ------------------------- */
+            /* ---------------------------------------------
+               海边胶片照片
+               --------------------------------------------- */
 
             .mobile-photo {
 
@@ -203,9 +242,9 @@
             }
 
 
-            /* -------------------------
-               照片下面的黑色区域
-               ------------------------- */
+            /* ---------------------------------------------
+               照片下面的栏目区域
+               --------------------------------------------- */
 
             .mobile-menu {
 
@@ -217,6 +256,10 @@
 
                 justify-content: center;
 
+                gap: 35px;
+
+                background: #000;
+
             }
 
 
@@ -226,41 +269,34 @@
 
                 text-decoration: none;
 
-                font-size: 15px;
+                font-size: 14px;
 
-                letter-spacing: 5px;
+                letter-spacing: 4px;
 
-                padding: 20px 30px;
+                padding: 15px 10px;
+
+                transition: opacity 0.3s ease;
 
             }
 
 
             .mobile-menu a:hover {
 
-                opacity: 0.6;
+                opacity: 0.55;
 
             }
 
 
-            /* -------------------------
-               以后可以继续增加内容
-               ------------------------- */
+            /* ---------------------------------------------
+               页面底部留白
+               以后可以在这里继续增加内容
+               --------------------------------------------- */
 
             .mobile-bottom {
 
                 min-height: 300px;
 
-                display: flex;
-
-                align-items: center;
-
-                justify-content: center;
-
-                color: #555;
-
-                font-size: 12px;
-
-                letter-spacing: 3px;
+                background: #000;
 
             }
 
@@ -275,14 +311,19 @@
 
 
     <!-- =================================================
-         电脑端首页
+         电脑端
          ================================================= -->
 
-    <div class="desktop-cover">
+    <div class="desktop-home">
 
 
-        <img src="sea.jpg" alt="海边胶片照片">
+        <!-- 海边胶片照片 -->
 
+        <img src="sea.jpg"
+             alt="海边胶片照片">
+
+
+        <!-- 网站名称 -->
 
         <div class="desktop-title">
 
@@ -291,15 +332,19 @@
         </div>
 
 
-        <div class="desktop-tag">
+        <!-- 栏目 -->
+
+        <nav class="desktop-menu">
 
             <a href="travel.html">
-
                 荒原漫游
-
             </a>
 
-        </div>
+            <a href="oyster.html">
+                牡蛎之外
+            </a>
+
+        </nav>
 
 
     </div>
@@ -307,7 +352,7 @@
 
 
     <!-- =================================================
-         手机端首页
+         手机端
          ================================================= -->
 
     <div class="mobile-home">
@@ -318,13 +363,10 @@
         <section class="mobile-title">
 
             <h1>
-
                 蓝夜渡舟
-
             </h1>
 
         </section>
-
 
 
         <!-- 完整照片 -->
@@ -337,27 +379,24 @@
         </section>
 
 
+        <!-- 栏目 -->
 
-        <!-- 荒原漫游 -->
-
-        <section class="mobile-menu">
+        <nav class="mobile-menu">
 
             <a href="travel.html">
-
                 荒原漫游
-
             </a>
 
-        </section>
+            <a href="oyster.html">
+                牡蛎之外
+            </a>
+
+        </nav>
 
 
-
-        <!-- 底部预留空间 -->
+        <!-- 底部留白 -->
 
         <section class="mobile-bottom">
-
-            ·
-
         </section>
 
 
